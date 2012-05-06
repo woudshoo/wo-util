@@ -1,0 +1,8 @@
+* Another Collection of Random Functions
+
+This project should be temporary, most of these functions
+are either not very reusable or better implementations are found
+in alexandria or similar utility projects.
+
+This is put here because at the moment it is still used
+by some of my other projects.
