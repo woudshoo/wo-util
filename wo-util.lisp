@@ -20,8 +20,7 @@ to determine when two elements are equal."
   "Returns t if (length list) equals n.
 Functionally it is equivalent with
  (equal n (length list))
-However it is more efficient for small `n' and long
-"
+However it is more efficient for small `n' and long lists."
   (if (eql n 0)
     (not list)
     (loop 
@@ -59,7 +58,7 @@ In this case a space is the literal #\Space character."
 (defun listify (item)
   "Wraps in a list if it is not a list. 
 Usefull for functions with either take a list of items
-or s single item."
+or a single item."
   (if (listp item) item (list item)))
 
 (defun add-non-nil (list-a list-b)
