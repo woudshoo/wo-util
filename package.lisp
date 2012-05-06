@@ -33,5 +33,7 @@
    #:flatten-list
    ;;; approximate-strings
    #:editing-distance
+   ;;; png functions
    #:png-size
-   #:png-list-chunks))
+   ;; #:png-list-chunks
+   ))
