@@ -88,7 +88,7 @@ Calling this on an empty queue is undefined."
 
 (defun priority-queue-top (queue)
   "Returns the element with the highest prioirty from the `queue'.  
-In contrast witht eh pop operation it will not remove the element from the queue.
+In contrast with the pop operation it will not remove the element from the queue.
 
 Calling this on an empty queue is undefined."
   (cdr (aref queue 0)))
