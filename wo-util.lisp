@@ -39,7 +39,6 @@ However it is more efficient for small `n' and long lists."
      :for value = (funcall f e)
      :do
      (when (or (not min-value) (< value min-value))
-       (format t "Min value: ~D, element: ~A~%" value e)
        (setf min-value value)
        (setf min-element e))))
 
