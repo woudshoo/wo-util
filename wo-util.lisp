@@ -30,7 +30,11 @@ However it is more efficient for small `n' and long lists."
 
 
 (defun minimizing (list f)
-  "Returns from `list' the element that minimizes `f'."
+  "Returns from `list' the element that minimizes `f'.
+
+Repeatedly call `f' on each list element of `list'.  The function
+`f' should be a function taking one argument and returning a number which
+can be compared with <."
   (loop 
      :with min-value = nil
      :with min-element = nil
