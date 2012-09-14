@@ -46,7 +46,7 @@ Key n       : lowest value.
 
 The value sare compared with #'>."
   (loop :for (key . count) :in
-     (sort (table-to-alist table) #'> :key #'cdr)
+     (sort (alexandria:hash-table-alist table) #'> :key #'cdr)
      :do
      (format t "~20A: ~D~%" key count)))
 

@@ -9,9 +9,6 @@
     (setf (ldb (byte 8 0) result) (read-byte stream))
     result))
 
-(defun test-read (stream)
-  (loop :repeat 4 :collect (read-byte stream)))
-
 
 (defun read-string (stream length)
   (coerce
