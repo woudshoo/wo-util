@@ -36,4 +36,4 @@
    ;;; png functions
    #:png-size
    ;; #:png-list-chunks
-   ))
+   #:add-value-to-map))

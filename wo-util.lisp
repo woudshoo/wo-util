@@ -84,3 +84,9 @@ The resulting list shares structure with list-a."
       (flatten-internal list))
     (nreverse  result)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun add-value-to-map (map key value)
+  "Add a value to list of values of map[key]."
+  (let ((new-value (cons value (fset:lookup map key))))
+    (fset:with map key new-value)))
