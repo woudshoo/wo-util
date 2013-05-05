@@ -2,7 +2,7 @@
 
 (asdf:defsystem #:wo-util
   :serial t
-  :depends-on (#:alexandria)
+  :depends-on (#:alexandria #:fset)
   :components ((:file "package")
                (:file "wo-util")
 	       (:file "queue")
