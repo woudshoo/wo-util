@@ -16,7 +16,7 @@ Returns the index where the element stops trickling up."
 
 (defun priority-queue-trickle-down (index queue)
   "takes the element at `index' of `queue' and moves it down
-the tree while the lement is smaller than one of the children.
+the tree while the element is smaller than one of the children.
 Returns the index of where the element ended."
   (loop 
      :with length = (length queue)

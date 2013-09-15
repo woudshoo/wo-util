@@ -10,11 +10,6 @@ returns the table for the graph with all edges reversed."
 	     table)
     result))
 
-#+nil (defun table-keys (table)
-  "Return all keys of the hash-table `table' in a list."
-  (let ((result))
-    (maphash (lambda (k v) (declare (ignore v)) (push k result)) table)
-    result))
 
 (defun make-count-table (list &optional &key (test #'eql))
   "Returns a table with keys all elements in `list' and values
@@ -25,14 +20,6 @@ are equal and should be one of the test accepted by make-hash-table."
        (incf (gethash el result 0)))
     result))
 
-#+nil (defun table-to-alist (table)
-  "Returns an alist version of `table'.
-That is an alist containing the pairs (key . value) for all key 
-value pairs in `table'."
-  (let ((result))
-    (maphash (lambda (k v) (push (cons k v) result))
-	     table)
-    result))
 
 (defun report-histogram (table)
   "Writes to the stream `t' histogram of `table'.

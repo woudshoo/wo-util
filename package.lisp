@@ -15,7 +15,7 @@
    #:priority-queue-pop-with-priority
    #:priority-queue-pop
    #:priority-queue-top
-   #:priorty-queue-empty-p
+   #:priority-queue-empty-p
    ;;; table functions
    #:reverse-table
    ;; #:table-keys  should use alexandria
