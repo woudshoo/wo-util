@@ -22,6 +22,15 @@ The behaviour is undefined if the queue is empty."
   (eq (car queue) (cdr queue)))
 
 
+(defun queue-copy (queue)
+  "Make a copy of the queue."
+  (let ((result (make-queue)))
+    (loop :for e :on (car queue)
+       :until (eq e (cdr queue))
+       :do
+	 (queue-push (car e) result))
+    result))
+
 (defmacro do-queue ((queue-element queue) &body body)
   "Executes body repeatedly for each element in the `queue'.
 The queue element will be bound to the var queue-element.

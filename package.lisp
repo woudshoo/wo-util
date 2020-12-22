@@ -5,6 +5,7 @@
   (:export
    ;;; queue
    #:make-queue
+   #:queue-copy
    #:queue-push
    #:queue-pop
    #:queue-empty-p
