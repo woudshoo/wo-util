@@ -21,6 +21,10 @@ The behaviour is undefined if the queue is empty."
   "Returns t if the queue is empty."
   (eq (car queue) (cdr queue)))
 
+(defun queue-length (queue)
+  "Returns number of items in the queue.  
+This function is O(n) in the length of the queue."
+  (- (length (car queue)) 1))
 
 (defun queue-copy (queue)
   "Make a copy of the queue."
