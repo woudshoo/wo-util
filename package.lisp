@@ -36,4 +36,5 @@
    ;;; png functions
    #:png-size
    ;; #:png-list-chunks
-   #:add-value-to-map))
+   #:add-value-to-map
+   #:priority-queue-top-priority))
