@@ -5,9 +5,11 @@
   (:export
    ;;; queue
    #:make-queue
+   #:queue-copy
    #:queue-push
    #:queue-pop
    #:queue-empty-p
+   #:queue-length
    #:do-queue
    ;;; priority queue
    #:make-priority-queue
