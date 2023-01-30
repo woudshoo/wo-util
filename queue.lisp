@@ -6,7 +6,9 @@
     (cons cell cell)))
 
 (defun queue-push (element queue)
-  "Adds `element' to the back of the FIFO `queue'."
+  "Adds `element' to the back of the FIFO `queue'.
+This operation is destructive on `queue'.
+The new queue is returned (which is the same place as the original queue)."
   (setf (cadr queue) element)
   (setf (cddr queue) (cons nil nil))
   (setf (cdr queue) (cddr queue))
@@ -34,6 +36,12 @@ This function is O(n) in the length of the queue."
        :do
 	 (queue-push (car e) result))
     result))
+
+(defun queue-to-list (queue)
+  "Returns the content of the queue as list"
+  (loop :repeat (queue-length queue)
+	:for e :in (car queue)
+	:collect e))
 
 (defmacro do-queue ((queue-element queue) &body body)
   "Executes body repeatedly for each element in the `queue'.

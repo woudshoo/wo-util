@@ -9,5 +9,6 @@
 	       (:file "priority-queue")
 	       (:file "table-functions")
 	       (:file "approximate-strings")
-	       (:file "png-size")))
+	       (:file "png-size")
+	       (:file "file")))
 

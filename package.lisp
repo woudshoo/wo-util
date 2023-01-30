@@ -39,4 +39,6 @@
    #:png-size
    ;; #:png-list-chunks
    #:add-value-to-map
-   #:priority-queue-top-priority))
+   #:priority-queue-top-priority
+   #:last-n-lines
+   #:queue-to-list))
