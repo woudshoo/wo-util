@@ -1,4 +1,11 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/table-functions
+    (:use :cl)
+  (:import-from #:alexandria #:hash-table-alist)
+  (:export
+   #:reverse-table
+   #:make-count-table
+   #:report-histogram))
+(in-package :wo-util/table-functions)
 
 (defun reverse-table (table &optional &key (test (hash-table-test table)))
   "Takes a hashtable of node --> list of targets and
@@ -33,7 +40,7 @@ Key n       : lowest value.
 
 The value sare compared with #'>."
   (loop 
-     :with entries =  (sort (alexandria:hash-table-alist table) #'> :key #'cdr)
+     :with entries =  (sort (hash-table-alist table) #'> :key #'cdr)
      :repeat (or top-n (hash-table-count table))
      :for (key . count) :in entries
      :do

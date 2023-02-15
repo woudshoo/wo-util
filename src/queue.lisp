@@ -1,4 +1,14 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/queue
+    (:use :cl)
+  (:export
+   #:make-queue
+   #:queue-push
+   #:queue-pop
+   #:queue-empty-p
+   #:queue-length
+   #:queue-copy
+   #:do-queue))
+(in-package :wo-util/queue)
 
 (defun make-queue ()
   "Creates a FIFO queue"

@@ -1,4 +1,14 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/priority-queue
+    (:use :cl)
+  (:export
+   #:make-priority-queue
+   #:priority-queue-raise-priority
+   #:priority-queue-pop-with-priority
+   #:priority-queue-pop
+   #:priority-queue-top
+   #:priority-queue-empty-p
+   #:priority-queue-push))
+(in-package :wo-util/priority-queue)
 
 (defun priority-queue-trickle-up (index queue)
   "takes the element at `index' of `queue' and moves it up 
