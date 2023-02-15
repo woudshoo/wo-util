@@ -44,5 +44,6 @@ The value sare compared with #'>."
      :repeat (or top-n (hash-table-count table))
      :for (key . count) :in entries
      :do
-     (format t "~20A: ~D~%" key count)))
+					;     (format t "~20A: ~D~%" key count)
+     (format t "| ~20A | ~5D |~%" key count)))
 

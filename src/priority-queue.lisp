@@ -7,7 +7,8 @@
    #:priority-queue-pop
    #:priority-queue-top
    #:priority-queue-empty-p
-   #:priority-queue-push))
+   #:priority-queue-push
+   #:priority-queue-top-priority))
 (in-package :wo-util/priority-queue)
 
 (defun priority-queue-trickle-up (index queue)
@@ -102,6 +103,10 @@ In contrast with the pop operation it will not remove the element from the queue
 
 Calling this on an empty queue is undefined."
   (cdr (aref queue 0)))
+
+(defun priority-queue-top-priority (queue)
+  "Returns the priority of the top element of the `queue'."
+  (car (aref queue 0)))
 
 (defun priority-queue-empty-p (queue)
   "Returns t if the `queue' contains no elements.  Returns nil otherwise."

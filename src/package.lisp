@@ -11,6 +11,7 @@
    :wo-util/list
    :wo-util/fset
    :wo-util/wo-util
+   :wo-util/file
    ;; this should be gone
    :wo-util/duplicate-code
    ))
@@ -52,4 +53,7 @@
    ;;; png functions
    #:png-size
    ;; #:png-list-chunks
-   #:add-value-to-map))
+   #:add-value-to-map
+   #:priority-queue-top-priority
+   #:last-n-lines
+   #:queue-to-list))
