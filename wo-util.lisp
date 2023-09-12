@@ -16,6 +16,7 @@ in `list-b'.   The optional argument `test' is the function used
 to determine when two elements are equal."
   (remove-if (lambda (v) (member v list-b :test test)) list-a))
 
+(declaim (ftype (function (fixnum list) boolean) length-is))
 (defun length-is (n list)
   "Returns t if (length list) equals n.
 Functionally it is equivalent with
@@ -28,7 +29,7 @@ However it is more efficient for small `n' and long lists."
        :for el :on list
        :finally (return (and el (not (cdr el)))))))
 
-
+(declaim (ftype (function (list function) t) minimizing))
 (defun minimizing (list f)
   "Returns from `list' the element that minimizes `f'.
 
@@ -58,12 +59,14 @@ In this case a space is the literal #\Space character."
 
 
 ;;; should be replaced by alexandria:ensure-list
+(declaim (ftype (function (t) list) listify))
 (defun listify (item)
   "Wraps in a list if it is not a list. 
 Usefull for functions with either take a list of items
 or a single item."
   (if (listp item) item (list item)))
 
+(declaim (ftype (function (list list) list) add-non-nil))
 (defun add-non-nil (list-a list-b)
   "Returns a list containing all elements of `list-a'
 and all non nil elements of `list-b'.
@@ -74,6 +77,7 @@ The resulting list shares structure with list-a."
        (when element (push element result)))
     result))
 
+(declaim (ftype (function (list) list) flatten-list))
 (defun flatten-list (list)
   "should use alexandria ???"
   (let ((result))

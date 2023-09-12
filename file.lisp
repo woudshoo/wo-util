@@ -1,8 +1,9 @@
 (in-package #:wo-util)
 
 (defgeneric last-n-lines (n input)
-  (:document "Returns as a list the last n lines of input.   
+  (:documentation "Returns as a list the last n lines of input.   
 Input can be a stream of a pathname.")
+  
   (:method ((n integer) (input stream))
     (let ((q (make-queue)))
       (loop :for i :from 1
