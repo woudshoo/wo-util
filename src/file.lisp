@@ -1,4 +1,6 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/file
+    (:use :cl :wo-util/queue))
+(in-package :wo-util/file)
 
 (defgeneric last-n-lines (n input)
   (:documentation "Returns as a list the last n lines of input.   

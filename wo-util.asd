@@ -2,13 +2,19 @@
 
 (asdf:defsystem #:wo-util
   :serial t
-  :depends-on (#:alexandria #:fset)
-  :components ((:file "package")
-               (:file "wo-util")
-	       (:file "queue")
-	       (:file "priority-queue")
-	       (:file "table-functions")
-	       (:file "approximate-strings")
-	       (:file "png-size")
-	       (:file "file")))
+  :depends-on (#:wo-util/package)
+  :class :package-inferred-system
+  :pathname "src/")
 
+
+
+#|
+:components  ((:file "package")
+	      (:file "wo-util")
+	      (:file "queue")
+	      (:file "priority-queue")
+	      (:file "table-functions")
+	      (:file "approximate-strings")
+	      (:file "png-size"))
+
+|#

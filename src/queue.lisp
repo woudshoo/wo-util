@@ -1,4 +1,15 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/queue
+    (:use :cl)
+  (:export
+   #:make-queue
+   #:queue-push
+   #:queue-pop
+   #:queue-empty-p
+   #:queue-length
+   #:queue-copy
+   #:do-queue
+   #:queue-to-list))
+(in-package :wo-util/queue)
 
 (deftype queue () '(cons))
 

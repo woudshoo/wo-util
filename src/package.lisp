@@ -1,6 +1,21 @@
 ;;;; package.lisp
 
-(defpackage #:wo-util
+(uiop:define-package :wo-util/package
+    (:nicknames :wo-util)
+  (:use-reexport
+   :wo-util/queue
+   :wo-util/table-functions
+   :wo-util/priority-queue
+   :wo-util/png-size
+   :wo-util/approximate-strings
+   :wo-util/list
+   :wo-util/fset
+   :wo-util/wo-util
+   :wo-util/file
+   ;; this should be gone
+   :wo-util/duplicate-code
+   ))
+#+nil (defpackage #:wo-util
   (:use #:cl)
   (:export
    ;;; queue

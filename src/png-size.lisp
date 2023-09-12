@@ -1,4 +1,8 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/png-size
+    (:use :cl)
+  (:export
+   #:png-size))
+(in-package :wo-util/png-size)
 
 
 (defun read-u4-be (stream)

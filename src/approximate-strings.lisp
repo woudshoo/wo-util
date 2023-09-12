@@ -1,4 +1,9 @@
-(in-package #:wo-util)
+(uiop:define-package :wo-util/approximate-strings
+    (:use :cl :wo-util/priority-queue)
+  (:import-from :alexandria #:ensure-list)
+  (:export
+   #:editing-distance))
+(in-package :wo-util/approximate-strings)
 
 ;;;;;;;;;;;;;
 (defun editing-distance (pattern texts &optional 
@@ -19,7 +24,7 @@ pattern starts and after the pattern ends in text."
   (let ((queue (make-priority-queue))
 	(pattern (coerce pattern 'list))
 	(texts (mapcar (lambda (txt) (coerce txt 'list))
-		       (listify texts))))
+		       (ensure-list texts))))
 
     (flet ((requeue (pat txt text priority)
 	     (priority-queue-raise-priority
