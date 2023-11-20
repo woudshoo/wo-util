@@ -1,5 +1,8 @@
 (uiop:define-package :wo-util/file
-    (:use :cl :wo-util/queue))
+    (:use :cl :wo-util/queue)
+  (:export
+   #:last-n-lines))
+
 (in-package :wo-util/file)
 
 (defgeneric last-n-lines (n input)
