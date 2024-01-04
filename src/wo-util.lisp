@@ -4,7 +4,8 @@
   (:use :cl)
   (:export
    #:minimizing
-   #:trim-spaces))
+   #:trim-spaces
+   #:maximizing))
 (in-package :wo-util/wo-util)
 
 
@@ -24,6 +25,23 @@ can be compared with <."
      (when (or (not min-value) (< value min-value))
        (setf min-value value)
        (setf min-element e))))
+
+(defun maximizing (list f)
+  "Returns from `list' the element that minimizes `f'.
+
+Repeatedly call `f' on each list element of `list'.  The function
+`f' should be a function taking one argument and returning a number which
+can be compared with <."
+  (loop 
+     :with max-value = nil
+     :with max-element = nil
+     :finally (return max-element)
+     :for e :in list 
+     :for value = (funcall f e)
+     :do
+     (when (or (not max-value) (> value max-value))
+       (setf max-value value)
+       (setf max-element e))))
 
 (defun trim-spaces (string)
   "Returns `string' with leading and trailing spaces stripped.
